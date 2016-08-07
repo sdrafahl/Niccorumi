@@ -18,6 +18,7 @@ import android.text.format.Time;
 import android.view.Display;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -48,7 +49,7 @@ public class Game extends FragmentActivity {
     protected ArrayList<Card> list;
     protected CardGame game;
     protected FragmentTransaction fragmentTransaction;
-
+    protected float dp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,17 +75,18 @@ public class Game extends FragmentActivity {
             case 3: maxL = rl.nextInt(5)+5;
                 break;
         }
+        this.dp = getResources().getDisplayMetrics().density;
         game = new CardGame(maxL);//starts the logical backend of the game
         this.list = game.getList();
         Card exa = game.getTopCard();
         exa.isTopCard=true;
-        exa.height=130;
-        exa.width=300;
+        exa.height=(int) dp*130;
+        exa.width=(int) dp*300;
         fragmentTransaction.add(R.id.topCard,game.getTopCard());
         for (int cou = 0; cou < list.size(); cou++) {
             Card c = list.get(cou);
-            c.height=130;
-            c.width=750/(game.getRound()+3);
+            c.height=(int) dp*130;
+            c.width=(int) dp*(750/(game.getRound()+3));
             fragmentTransaction.add(R.id.trueGameContainer, c);
         }
         fragmentTransaction.commit();
@@ -131,8 +133,8 @@ public class Game extends FragmentActivity {
             Card newC = new Card();
             newC.value=faceUp.value;
             newC.suite=faceUp.suite;
-            newC.height=130;
-            newC.width=750/(game.getRound()+3);
+            newC.height=(int)dp*130;
+            newC.width=(int)dp*(750/(game.getRound()+3));
             list.add(newC);
             list.remove(selected);
             ft.add(R.id.trueGameContainer,newC);//this crashes
@@ -154,8 +156,9 @@ public class Game extends FragmentActivity {
             newTop.suite=suit;
             newTop.value=val;
             newTop.isTopCard=true;
-            newTop.height=130;
-            newTop.width=300;
+
+            newTop.height= (int)(130 * dp);//
+            newTop.width=(int) dp * 300;
             game.setTopCard(newTop);
             ft.remove(faceUp);
             ft.add(R.id.topCard, newTop);
@@ -250,7 +253,8 @@ public class Game extends FragmentActivity {
             for (int cou = 0; cou < list.size(); cou++) {
                 Card c = list.get(cou);
                 c.width=900/(game.getRound()+3);
-                c.height=130;
+                c.width=(int) dp*c.width;
+                c.height=(int) dp*130;
                 ft.add(R.id.trueGameContainer, c);
             }
             ft.commit();
@@ -358,11 +362,11 @@ public class Game extends FragmentActivity {
                 }
                 newC.setValue(num);
                 newC.suite=suite;
-                newC.width=750/(game.getRound()+3);
-                newC.height=130;
+                newC.width=(int) dp*(750/(game.getRound()+3));
+                newC.height=(int) dp*130;
                 View daf = newC.getView();
-                newC.height=130;
-                newC.width=750/(game.getRound()+3);
+                newC.height=(int) dp*130;
+                newC.width=(int) dp*(750/(game.getRound()+3));
                 list.add(newC);
                 ft.add(R.id.trueGameContainer,newC);
                 ft.commit();
@@ -583,9 +587,9 @@ public class Game extends FragmentActivity {
         Card n = new Card();
         n.setValue(value);
         n.suite=su;
-        n.height=130;
+        n.height=(int) dp*130;
 
-        n.width=750/(game.getRound()+3);
+        n.width=(int) dp*(750/(game.getRound()+3));
         list.add(n);
         ft.add(R.id.trueGameContainer,n);
         ft.commit();
