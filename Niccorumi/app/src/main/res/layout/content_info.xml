@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.shanedrafahl.www.niccorumi.info"
+    tools:showIn="@layout/activity_info">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="I am not sure of the origin of the card game Niccorumi but I know of it from my family which have played this game for years. Over the years they have added new rules to the game. This is my version of the game. To play the game you start with three cards and depending on the difficulty level you can either get a random card by touching the backside of a card or taking the card that is face up in place of one of the cards you have on the bottom.In order to select the card to replace you just need to touch one of the cards at the bottom.When the card is selected the card will rise and when they are deselected they will return back to normal height.Depending on the difficulty you will have a finite number of passes before you have to go out. Wild cards can be converted to any card you want by touching it. Wild cards are cards that have a value of the number of cards dealt to the player. For example during round 0 cards with value 3 are wild and ect. In a future update I plan on adding multiplayer to this app. "
+        android:textSize="16dp"
+        />
+
+</RelativeLayout>

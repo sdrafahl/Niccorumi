@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "718702092389",
+    "firebase_url": "https://admob-app-id-5861011294.firebaseio.com",
+    "project_id": "admob-app-id-5861011294",
+    "storage_bucket": "admob-app-id-5861011294.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718702092389:android:69562e94dd5b3b3d",
+        "android_client_info": {
+          "package_name": "com.shanedrafahl.www.niccorumi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718702092389-ru09n7540ag389meo1ccev974tun013n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzNlpAGWvWo3JMPlRY5Iv2ootH0SHm0fA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

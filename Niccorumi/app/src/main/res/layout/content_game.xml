@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_gameCont"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="@android:color/holo_green_dark"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.shanedrafahl.www.niccorumi.Game"
+    tools:showIn="@layout/activity_game">
+
+    <FrameLayout
+        android:clickable="true"
+        android:onClick="getTopCard"
+        android:layout_width="130dp"
+        android:layout_height="117dp"
+        android:id="@+id/topCard"
+        >
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="143dp"
+        android:layout_height="151dp"
+        android:layout_gravity="right|top">
+        <TextView
+            android:layout_width="100dp"
+            android:textAlignment="center"
+            android:layout_height="100dp"
+            android:textSize="20dp"
+            android:textAllCaps="true"
+            android:id="@+id/score"
+            />
+
+    </FrameLayout>
+
+    <GridLayout
+        android:id="@+id/trueGameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="167dp"
+        android:layout_gravity="center_horizontal|bottom">
+
+    </GridLayout>
+
+    <FrameLayout
+        android:layout_width="255dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center_horizontal|top">
+
+
+
+        <ImageView
+            android:layout_width="90dp"
+            android:src="@drawable/backofcard"
+            android:layout_height="90dp"
+            android:layout_gravity="left|center_vertical"
+            android:onClick="getRandom"
+            />
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:onClick="getFaceUp"
+            android:text="Get Face Up Card"
+            />
+
+        <Button
+            android:onClick="goOut"
+            android:text="Go Out For Selected"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom" />
+
+    </FrameLayout>
+
+
+</FrameLayout>
